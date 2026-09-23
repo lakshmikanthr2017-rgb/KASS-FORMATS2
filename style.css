@@ -1,0 +1,198 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #dbe2e8;
+    margin: 0;
+    padding: 20px;
+    color: #111;
+}
+
+.action-bar {
+    max-width: 210mm;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-print {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-action {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-del {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* A4 Sheet Formatting */
+.a4-page {
+    background: #ffffff;
+    width: 210mm;
+    min-height: 295mm;
+    margin: 0 auto 20px auto;
+    padding: 15mm;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.page-break {
+    page-break-before: always;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.header h3, .header h2, .header h4 {
+    margin: 2px 0;
+}
+
+.sub-title {
+    font-weight: bold;
+}
+
+.english-title {
+    font-size: 11px;
+    font-style: italic;
+}
+
+.instructions {
+    font-size: 11px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+}
+
+/* Editable Inputs & Tables */
+.kass-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.kass-table th, .kass-table td {
+    border: 1px solid #000;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+.kass-table th {
+    background-color: #f0f0f0;
+}
+
+.kass-table input, .kass-table textarea {
+    width: 100%;
+    border: 1px solid transparent;
+    outline: none;
+    font-size: 12px;
+    font-family: inherit;
+    background: #fdfdfd;
+    box-sizing: border-box;
+}
+
+.kass-table input:focus, .kass-table textarea:focus {
+    border: 1px solid #0056b3;
+    background: #fff;
+}
+
+.inline-input {
+    border: none;
+    border-bottom: 1px dashed #000;
+    outline: none;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 2px 5px;
+}
+
+.declaration-block {
+    border: 1px solid #333;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.declaration-block h3 {
+    margin-top: 0;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.signature-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+.sig-right {
+    text-align: center;
+}
+
+.footer-meta {
+    position: absolute;
+    bottom: 10mm;
+    left: 15mm;
+    right: 15mm;
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Print Rules */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .a4-page {
+        box-shadow: none;
+        width: 100%;
+        margin: 0;
+        padding: 10mm;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+
+    .kass-table input, .kass-table textarea {
+        border: none;
+        background: transparent;
+        font-weight: bold;
+    }
+}
